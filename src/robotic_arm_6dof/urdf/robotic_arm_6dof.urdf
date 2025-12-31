@@ -1,25 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="robotic_arm_6dof">
+  <link name="world"/>
+  <joint name="world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
   <link
     name="base_link">
     <inertial>
-      <origin
-        xyz="-0.160748808307766 -0.00741797832213025 -0.088360649318168"
-        rpy="0 0 0" />
-      <mass
-        value="0.0763754463040628" />
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <mass value="10.0"/>
       <inertia
-        ixx="4.23953757303269E-05"
-        ixy="-9.86232282095576E-12"
-        ixz="6.65031103528841E-08"
-        iyy="1.87712760672681E-05"
-        iyz="7.17319272491096E-08"
-        izz="3.99044935666079E-05" />
+        ixx="0.01"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.01"
+        iyz="0.0"
+        izz="0.01"/>
     </inertial>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -47,19 +50,17 @@
   <link
     name="base_rotator">
     <inertial>
-      <origin
-        xyz="0.0136091822020193 0.000265822789707187 0.0127057602834607"
-        rpy="0 0 0" />
-      <mass
-        value="0.0393066448790151" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0"/>
       <inertia
-        ixx="8.94291156894741E-06"
-        ixy="-7.16990812231746E-08"
-        ixz="6.78884235910539E-12"
-        iyy="1.17467155572598E-05"
-        iyz="-6.65028867021334E-08"
-        izz="1.13233060126383E-05" />
+        ixx="0.01"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.01"
+        iyz="0.0"
+        izz="0.01"/>
     </inertial>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -100,19 +101,17 @@
   <link
     name="shoulder_link">
     <inertial>
-      <origin
-        xyz="-0.00542737331091207 0.0207591340660911 0.0514605309104713"
-        rpy="0 0 0" />
-      <mass
-        value="0.0144514859726596" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0"/>
       <inertia
-        ixx="1.17337857012936E-05"
-        ixy="1.61790596037335E-06"
-        ixz="1.04410809662612E-12"
-        iyy="5.96847210302326E-06"
-        iyz="1.47468699935973E-12"
-        izz="7.98191938878511E-06" />
+        ixx="0.01"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.01"
+        iyz="0.0"
+        izz="0.01"/>
     </inertial>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -152,25 +151,24 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="0"
-      velocity="0" />
+      effort="1"
+      velocity="1" />
+    <dynamics damping="0.5" friction="0.1"/>
   </joint>
   <link
     name="elbow_Link">
     <inertial>
-      <origin
-        xyz="0.0179850825088401 0.0231349067362636 -0.000816047063876363"
-        rpy="0 0 0" />
-      <mass
-        value="0.0420586657729736" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0"/>
       <inertia
-        ixx="9.19057415809374E-06"
-        ixy="-2.07862091149447E-08"
-        ixz="-8.86211668419417E-08"
-        iyy="8.80316220324554E-06"
-        iyz="-7.91496258450743E-08"
-        izz="1.49766403640064E-05" />
+        ixx="0.01"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.01"
+        iyz="0.0"
+        izz="0.01"/>
     </inertial>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -210,25 +208,24 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="0"
-      velocity="0" />
+      effort="1"
+      velocity="1" />
+    <dynamics damping="0.5" friction="0.1"/>
   </joint>
   <link
     name="wrist_Link">
     <inertial>
-      <origin
-        xyz="0.0201661642819521 0.0185253919729509 0.0134765430950954"
-        rpy="0 0 0" />
-      <mass
-        value="0.0644141323115809" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.7"/>
       <inertia
-        ixx="1.0619854325748E-05"
-        ixy="-1.43463626130247E-07"
-        ixz="6.65104745661783E-08"
-        iyy="1.06200186270456E-05"
-        iyz="6.65111783188749E-08"
-        izz="1.71013472797244E-05" />
+        ixx="0.01"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.01"
+        iyz="0.0"
+        izz="0.01"/>
     </inertial>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -268,25 +265,24 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="0"
-      velocity="0" />
+      effort="1"
+      velocity="1" />
+    <dynamics damping="0.5" friction="0.1"/>
   </joint>
   <link
     name="end_base">
     <inertial>
-      <origin
-        xyz="0.0291048300694188 -0.0219227058945996 -0.0182001290221276"
-        rpy="0 0 0" />
-      <mass
-        value="0.0345345547168646" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.4"/>
       <inertia
-        ixx="8.00021100531572E-06"
-        ixy="4.63252693135927E-09"
-        ixz="4.00541184882921E-13"
-        iyy="4.78420683454556E-06"
-        iyz="-7.17154389145337E-08"
-        izz="5.91653043542266E-06" />
+        ixx="0.01"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.01"
+        iyz="0.0"
+        izz="0.01"/>
     </inertial>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -326,25 +322,24 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="0"
-      velocity="0" />
+      effort="1"
+      velocity="1" />
+    <dynamics damping="0.5" friction="0.1"/>
   </joint>
   <link
     name="gear_right">
     <inertial>
-      <origin
-        xyz="0.00522210775020111 0.000121761120217403 0.000637835367012118"
-        rpy="0 0 0" />
-      <mass
-        value="0.00207956891883696" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
       <inertia
-        ixx="6.18312305314825E-08"
-        ixy="2.9040733035334E-09"
-        ixz="-1.07678319362615E-12"
-        iyy="2.47299851403229E-07"
-        iyz="4.77479240020125E-12"
-        izz="3.06156104591973E-07" />
+        ixx="0.01"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.01"
+        iyz="0.0"
+        izz="0.01"/>
     </inertial>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -384,25 +379,24 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="0"
-      velocity="0" />
+      effort="1"
+      velocity="1" />
+    <dynamics damping="0.5" friction="0.1"/>
   </joint>
   <link
     name="finger_right">
     <inertial>
-      <origin
-        xyz="0.0222749786582408 -0.00229862724332237 -0.00449696732193056"
-        rpy="0 0 0" />
-      <mass
-        value="0.00221856156382406" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
       <inertia
-        ixx="3.8168362729864E-08"
-        ixy="9.48550472979781E-08"
-        ixz="-1.55713868214021E-13"
-        iyy="5.21693961792075E-07"
-        iyz="1.51260953346411E-16"
-        izz="5.52361046133005E-07" />
+        ixx="0.01"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.01"
+        iyz="0.0"
+        izz="0.01"/>
     </inertial>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -442,29 +436,28 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="0"
-      velocity="0" />
+      effort="1"
+      velocity="1" />
     <mimic
       joint="gear_right_joint"
       multiplier="1"
       offset="0" />
+    <dynamics damping="0.5" friction="0.1"/>
   </joint>
   <link
     name="gear_left">
     <inertial>
-      <origin
-        xyz="0.00742875873647911 -0.000173281374520518 -0.0011045371319465"
-        rpy="0 0 0" />
-      <mass
-        value="0.00146187481822585" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
       <inertia
-        ixx="4.66933745433603E-08"
-        ixy="-2.78602520296168E-09"
-        ixz="1.81888424446724E-12"
-        iyy="2.37227324448417E-07"
-        iyz="-4.73125416228374E-12"
-        izz="2.82953106359871E-07" />
+        ixx="0.01"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.01"
+        iyz="0.0"
+        izz="0.01"/>
     </inertial>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -504,29 +497,28 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="0"
-      velocity="0" />
+      effort="1"
+      velocity="1" />
     <mimic
       joint="gear_right_joint"
       multiplier="-1"
       offset="0" />
+    <dynamics damping="0.5" friction="0.1"/>
   </joint>
   <link
     name="finger_left">
     <inertial>
-      <origin
-        xyz="0.0224117829979157 0.00231258624567058 -0.00446850609130195"
-        rpy="0 0 0" />
-      <mass
-        value="0.00220506613383814" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
       <inertia
-        ixx="3.77773345499567E-08"
-        ixy="-9.48534895099289E-08"
-        ixz="2.72215152298512E-13"
-        iyy="5.21302462663036E-07"
-        iyz="-1.42086394163337E-14"
-        izz="5.52347265627548E-07" />
+        ixx="0.01"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.01"
+        iyz="0.0"
+        izz="0.01"/>
     </inertial>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -566,29 +558,28 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="0"
-      velocity="0" />
+      effort="1"
+      velocity="1" />
     <mimic
       joint="gear_left_joint"
       multiplier="1"
       offset="0" />
+    <dynamics damping="0.5" friction="0.1"/>
   </joint>
   <link
     name="anchor_right">
     <inertial>
-      <origin
-        xyz="0.0149999999772549 2.32300290115006E-13 -0.00520000000000004"
-        rpy="0 0 0" />
-      <mass
-        value="0.00040273621239968" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
       <inertia
-        ixx="7.10894577642955E-10"
-        ixy="4.82734850667704E-19"
-        ixz="2.3164769576848E-17"
-        iyy="4.947065575232E-08"
-        iyz="-1.16657004682848E-17"
-        izz="4.99214388440103E-08" />
+        ixx="0.01"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.01"
+        iyz="0.0"
+        izz="0.01"/>
     </inertial>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -628,29 +619,28 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="0"
-      velocity="0" />
+      effort="1"
+      velocity="1" />
     <mimic
       joint="gear_right_joint"
       multiplier="1"
       offset="0" />
+    <dynamics damping="0.5" friction="0.1"/>
   </joint>
   <link
     name="anchor_left">
     <inertial>
-      <origin
-        xyz="0.0149999999555894 3.27828042490097E-14 -0.00520000000000001"
-        rpy="0 0 0" />
-      <mass
-        value="0.000402736212399681" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
       <inertia
-        ixx="7.10894577224504E-10"
-        ixy="-2.91276563126718E-20"
-        ixz="2.28948117330554E-18"
-        iyy="4.94706557524056E-08"
-        iyz="-2.27182309736382E-17"
-        izz="4.99214388436773E-08" />
+        ixx="0.01"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.01"
+        iyz="0.0"
+        izz="0.01"/>
     </inertial>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -690,11 +680,105 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="0"
-      velocity="0" />
+      effort="1"
+      velocity="1" />
     <mimic
       joint="gear_left_joint"
       multiplier="1"
       offset="0" />
+    <dynamics damping="0.5" friction="0.1"/>
   </joint>
+
+  <link name="wrist_camera_link"/>
+  <joint name="wrist_camera_joint" type="fixed">
+    <parent link="wrist_Link"/>
+    <child link="wrist_camera_link"/>
+    <origin xyz="0.05 0 0" rpy="0 0 0"/>
+  </joint>
+
+
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+    <gravity>false</gravity>
+  </gazebo>
+  <gazebo reference="base_rotator">
+    <material>Gazebo/Blue</material>
+    <gravity>false</gravity>
+  </gazebo>
+  <gazebo reference="shoulder_link">
+    <material>Gazebo/Blue</material>
+    <gravity>false</gravity>
+  </gazebo>
+  <gazebo reference="elbow_Link">
+    <material>Gazebo/Blue</material>
+    <gravity>false</gravity>
+  </gazebo>
+  <gazebo reference="wrist_Link">
+    <material>Gazebo/Blue</material>
+    <gravity>false</gravity>
+  </gazebo>
+  <gazebo reference="end_base">
+    <material>Gazebo/Blue</material>
+    <gravity>false</gravity>
+  </gazebo>
+  <gazebo reference="gear_right">
+    <material>Gazebo/Blue</material>
+    <gravity>false</gravity>
+  </gazebo>
+  <gazebo reference="gear_left">
+    <material>Gazebo/Blue</material>
+    <gravity>false</gravity>
+  </gazebo>
+  <gazebo reference="anchor_left">
+    <material>Gazebo/Blue</material>
+    <gravity>false</gravity>
+  </gazebo>
+  <gazebo reference="anchor_right">
+    <material>Gazebo/Blue</material>
+    <gravity>false</gravity>
+  </gazebo>
+  <gazebo reference="finger_left">
+    <material>Gazebo/Blue</material>
+    <gravity>false</gravity>
+  </gazebo>
+  <gazebo reference="finger_right">
+    <material>Gazebo/Blue</material>
+    <gravity>false</gravity>
+  </gazebo>
+  <gazebo>
+    <self_collide>false</self_collide>
+    <gravity>false</gravity>
+  </gazebo>
+
+  <gazebo reference="wrist_camera_link">
+    <sensor type="camera" name="wrist_camera">
+      <always_on>true</always_on>
+      <update_rate>30</update_rate>
+
+      <camera>
+        <horizontal_fov>1.047</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.01</near>
+          <far>10.0</far>
+        </clip>
+      </camera>
+
+      <plugin name="gazebo_ros_camera" filename="libgazebo_ros_camera.so">
+        <camera_name>wrist_camera</camera_name>
+        <frame_name>wrist_camera_link</frame_name>
+        <image_topic_name>image_raw</image_topic_name>
+        <camera_info_topic_name>camera_info</camera_info_topic_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <physics type="ode">
+    <gravity>0 0 0</gravity>
+  </physics>
+
 </robot>
